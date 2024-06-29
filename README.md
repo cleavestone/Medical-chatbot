@@ -1,6 +1,8 @@
 # End-to-end Medical Chatbot with llama2
 
 ## Steps
+
+**create virtual environment**
 ```bash
 virtualenv mchaatbot
 ```
