@@ -5,3 +5,4 @@ langchain
 flask
 langchain-community
 pinecone-client[grpc]
+python-dotenv
