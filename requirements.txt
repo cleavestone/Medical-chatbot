@@ -9,3 +9,5 @@ pypdf
 openai
 langchain_pinecone
 tiktoken
+
+-e .
