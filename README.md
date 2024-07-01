@@ -14,4 +14,9 @@ source mchatbot/scripts/activate
 ```bash
 pip install -r requirements.txt
 ```
+**Create  a .env file in the root directory and store your Pinecone API key and openai key**
+```ini
+PINECONE_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXX"
+OPENAI_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXX"
+```
 

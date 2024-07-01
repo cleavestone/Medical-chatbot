@@ -1,8 +1,11 @@
-ctransformers
-sentence-transformers
+
 pinecone-client
 langchain
 flask
 langchain-community
 pinecone-client[grpc]
 python-dotenv
+pypdf
+openai
+langchain_pinecone
+tiktoken
