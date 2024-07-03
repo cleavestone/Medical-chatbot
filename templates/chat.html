@@ -13,45 +13,14 @@
     </header>
     <div class="box">
         <div class="chat-window">
-            <div class="person-a">
-                <div class="icon"></div> <!-- icon-->
-                <div class="message">Cat ipsum dolor sit amet, sit on human they not getting up ever and purr while eating.</div><!-- message -->
-            </div><!-- person a -->
-
+            <!-- Default welcome message -->
             <div class="person-b">
-                <div class="message">Lies down claw drapes jump off balcony</div><!-- message -->
-            </div><!-- person b -->
-
-            <div class="person-a">
-                <div class="icon"></div> <!-- icon-->
-                <div class="message">Knock everything off the table</div><!-- message -->
-            </div><!-- person a -->
-
-            <div class="person-b">
-                <div class="message">Intently stare at the same spot stand in doorway</div><!-- message -->
-            </div><!-- person b -->
-
-            <div class="person-a">
-                <div class="icon"></div> <!-- icon-->
-                <div class="message">Poop in the plant pot</div><!-- message -->
-            </div><!-- person a -->
-
-            <div class="person-b">
-                <div class="message">Always wanting food</div><!-- message -->
-            </div><!-- person b -->
-
-            <div class="person-a">
-                <div class="icon"></div> <!-- icon-->
-                <div class="message last">
-                    <svg class="cat" viewBox="0 0 512 512">
-                        <!-- SVG content -->
-                    </svg>
-                </div><!-- message -->
-            </div><!-- person a -->
+                <div class="message">Welcome to our Medical Chatbot! I'm here to assist you with any health-related questions or concerns you might have. How can I help you today?</div>
+            </div>
         </div><!-- chat-window -->
 
-        <form class="chat-input" action="#" method="POST">
-            <input type="text" placeholder="Type your message...">
+        <form class="chat-input" action="/get" method="POST">
+            <input type="text" name="msg" placeholder="Type your message..." required>
             <button type="submit">Send</button>
         </form>
     </div><!-- box -->
@@ -59,7 +28,43 @@
     <footer>
         <p>Medical Chatbot © 2024</p>
     </footer>
-</div>
+
+    <script>
+      document.querySelector('.chat-input').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+
+        const formData = new FormData(event.target);
+        const userMessage = formData.get('msg');
+        
+        // Append user's message to the chat window
+        const chatWindow = document.querySelector('.chat-window');
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'person-a';
+        userMessageDiv.innerHTML = `<div class="message">${userMessage}</div>`;
+        chatWindow.appendChild(userMessageDiv);
+        
+        fetch('/get', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json()) // Expecting JSON response
+        .then(data => {
+          const botMessageDiv = document.createElement('div');
+          botMessageDiv.className = 'person-b'; // Assuming the bot's response is person-b
+          botMessageDiv.innerHTML = `<div class="message">${data.result}</div>`;
+          chatWindow.appendChild(botMessageDiv);
+          
+          // Optionally scroll to the bottom of the chat window
+          chatWindow.scrollTop = chatWindow.scrollHeight;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+        
+        // Clear the input field after submission
+        event.target.reset();
+      });
+    </script>
 </body>
 </html>
 

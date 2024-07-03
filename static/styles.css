@@ -13,7 +13,7 @@ body {
 }
 
 header, footer {
-    background: #e24a89;
+    background: #521724;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -84,7 +84,7 @@ header h1, footer p {
 }
 
 .person-b .message {
-    background: rgb(219, 19, 19);
+    background: rgb(42, 2, 95);
     margin: 2em 0;
     margin-left: 80px;
     color: white;
@@ -116,7 +116,7 @@ header h1, footer p {
 }
 
 .chat-input button {
-    background: #4A90E2;
+    background: #06d834;
     color: white;
     border: none;
     padding: 0.5em 1em;
@@ -126,17 +126,5 @@ header h1, footer p {
 
 .chat-input button:hover {
     background: #357ABD;
-}
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: url('../static/img33.jfif') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 0.3; /* Adjust the opacity to make the background image less intrusive */
 }
 
