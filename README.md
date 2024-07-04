@@ -20,3 +20,20 @@ PINECONE_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXX"
 OPENAI_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
+```bash
+python store_index.py
+```
+
+```bash
+python app.py
+```
+```bash
+open localhost
+```
+### Tech stack
+- Python
+- Langchain
+- OpenAI
+- Pinecone
+
+
