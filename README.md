@@ -1,4 +1,4 @@
-# End-to-end Medical Chatbot with llama2
+# End-to-end Medical Chatbot
 
 ## Steps
 
